@@ -1,0 +1,8 @@
+firebase-key.json
+firebase-adminsdk.json
+
+yolov4.weights
+
+__pycache__/
+/outputs
+checkpoints
