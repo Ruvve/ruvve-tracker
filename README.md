@@ -40,8 +40,9 @@ Object tracking implemented with YOLOv4, DeepSort, and TensorFlow. YOLOv4 is a s
 <br/><br/>
 
 ## Ruvve Architecture
-<img alt="Service Architecture" width="100%" src="https://user-images.githubusercontent.com/43839834/135746113-b2428f0c-29fd-4e07-84cf-478fe017a845.png
-" />
+<img alt="Service Architecture" width="100%" src="https://user-images.githubusercontent.com/43839834/135746113-b2428f0c-29fd-4e07-84cf-478fe017a845.png" />
+
+<br/><br/>
 
 <p align="center">
 <a href="https://github.com/Ruvve/ruvve-server"><img alt="Ruvve Server" title="Ruvve Server" src="https://img.shields.io/badge/-Ruvve Server-grey?style=for-the-badge&logo=github&logoColor=white"/></a>
