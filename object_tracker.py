@@ -25,6 +25,7 @@ from tools import generate_detections as gdet
 import push_fcm_notification
 from push_fcm_notification import send_message
 from data.classes.korean_map import class_korean_map
+from start_print import print_awesome
 
 flags.DEFINE_string('framework', 'tf', '(tf, tflite, trt')
 flags.DEFINE_string('weights', './checkpoints/yolov4-416',
@@ -32,7 +33,8 @@ flags.DEFINE_string('weights', './checkpoints/yolov4-416',
 flags.DEFINE_integer('size', 416, 'resize images to')
 flags.DEFINE_boolean('tiny', False, 'yolo or yolo-tiny')
 flags.DEFINE_string('model', 'yolov4', 'yolov3 or yolov4')
-flags.DEFINE_string('video', './data/video/test.mp4', 'path to input video or set to 0 for webcam')
+flags.DEFINE_string('video', '0', 'path to input video or set to 0 for webcam')
+# flags.DEFINE_string('video', './data/video/test.mp4', 'path to input video or set to 0 for webcam')
 flags.DEFINE_string('output', None, 'path to output video')
 flags.DEFINE_string('output_format', 'XVID', 'codec used in VideoWriter when saving video to file')
 flags.DEFINE_float('iou', 0.45, 'iou threshold')
@@ -40,8 +42,11 @@ flags.DEFINE_float('score', 0.50, 'score threshold')
 flags.DEFINE_boolean('dont_show', False, 'dont show video output')
 flags.DEFINE_boolean('info', False, 'show detailed info of tracked objects')
 flags.DEFINE_boolean('count', False, 'count objects being tracked on screen')
+flags.DEFINE_boolean('push', True, 'set push message')
 
 def main(_argv):
+    print_awesome()
+
     # Definition of the parameters
     max_cosine_distance = 0.4
     nn_budget = None
@@ -50,8 +55,12 @@ def main(_argv):
     # initialize deep sort
     model_filename = 'model_data/mars-small128.pb'
     encoder = gdet.create_box_encoder(model_filename, batch_size=1)
+
+    print('* Calculate Cosine Distance Metric.')
     # calculate cosine distance metric
     metric = nn_matching.NearestNeighborDistanceMetric("cosine", max_cosine_distance, nn_budget)
+
+    print('* Initialize tracker.')
     # initialize tracker
     tracker = Tracker(metric)
 
@@ -63,6 +72,7 @@ def main(_argv):
     input_size = FLAGS.size
     video_path = FLAGS.video
 
+    print('* Load Saved Model.')
     saved_model_loaded = tf.saved_model.load(FLAGS.weights, tags=[tag_constants.SERVING])
     infer = saved_model_loaded.signatures['serving_default']
 
@@ -85,6 +95,12 @@ def main(_argv):
 
     frame_num = 0
     detect_list = []
+    
+
+    print('\n===================================================\n')
+    print('* Tracking Start.')
+    print('* Enter Q to exit.\n')
+
     # while video is running
     while True:
         return_value, frame = vid.read()
@@ -197,8 +213,9 @@ def main(_argv):
             cv2.putText(frame, track_label,(int(bbox[0]), int(bbox[1]-10)),0, 0.75, (255,255,255),2)
             
             if track_label not in detect_list :
-                push_message = class_korean_map[class_name] if class_name in class_korean_map else track_label
-                send_message("Ruvve가 장애물을 발견했어요!", push_message+" 출현! 조심하세요 ~ ")
+                if FLAGS.push:
+                    push_message = class_korean_map[class_name] if class_name in class_korean_map else track_label
+                    send_message("Ruvve가 장애물을 발견했어요!", push_message + " 출현! 조심하세요 ~ ")
                 print("New Detection - ", track_label)
                 detect_list.append(track_label)
 

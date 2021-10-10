@@ -6,3 +6,4 @@ yolov4.weights
 __pycache__/
 /outputs
 checkpoints
+run.sh
