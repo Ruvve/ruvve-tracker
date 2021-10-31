@@ -1,33 +1,9 @@
 # Ruvve Tracker
 
-### yolov4-deepsort
-
-Object tracking implemented with YOLOv4, DeepSort, and TensorFlow. YOLOv4 is a state of the art algorithm that uses deep convolutional neural networks to perform object detections. We can take the output of YOLOv4 feed these object detections into Deep SORT (Simple Online and Realtime Tracking with a Deep Association Metric) in order to create a highly accurate object tracker.
-
-<br/>
-
-<p align="center">
-<img alt="python-v3.7.0" src="https://img.shields.io/badge/python-v3.7.0-3f72af" />
-<img alt="opencv-4.1.1.26" src="https://img.shields.io/badge/opencv-4.1.1.26-green.svg" />
-<img alt="Yolo-v4" src="https://img.shields.io/badge/Yolo-v4-aa96da" />
-
-<br/>
-<a href="https://github.com/theAIGuysCode/yolov4-deepsort">
-<img alt="Origin Repository" src="https://img.shields.io/badge/Origin Repository-grey" />
-</a>
-<img alt="license" src="https://img.shields.io/github/license/mashape/apistatus.svg" />
-</p>
-<br/>
-
-<p align="center">
-<img alt="mockup" width="60%" src="https://user-images.githubusercontent.com/43839834/135746103-41e41f40-0fbf-415e-9a11-2a5c8ea34cab.png" />
-</p>
-
-<br/><br/>
-
 #### Personal Mobility Navigation - Ruvve
 
 <br />
+
 최근 도로나 인도에 **전동 킥보드**가 많이 보이고 있지 않나요? <br/>
 배달로 인한 오토바이의 수도 점점 증가하고 있어요.  <br/>
 <br/>
@@ -50,6 +26,8 @@ Ruvve가 가진 다른 네비게이션 서비스와의 차별점이 두 가지 �
 더 자세한 이야기는 아래 Notion 에 소개해두었습니다 😆<br/>
 피드백과 질문은 언제나 환영입니다! 👉🏻 노션 "Feedback & Comment" Section에 달아주시면 됩니다 👀🔥
 
+<br/>
+
 <p align="center">
 <table align="center"><tr><td>
  <a href="https://ruvve.notion.site/Ruvve-27b333f612814d07aaa2f6e8090c0e90"><img alt="notion" title="Notion" src="https://img.shields.io/badge/-Notion-white?style=for-the-badge&logo=notion&logoColor=black"/></a>
@@ -60,6 +38,32 @@ Ruvve가 가진 다른 네비게이션 서비스와의 차별점이 두 가지 �
 <!-- <p align="center">
 <img alt="mockup" width="80%" src="https://user-images.githubusercontent.com/43839834/135746381-1c6d9f45-3247-4df0-99ad-e21819087553.png" />
 </p> -->
+
+<br/><br/>
+
+
+### yolov4-deepsort
+
+Object tracking implemented with YOLOv4, DeepSort, and TensorFlow. YOLOv4 is a state of the art algorithm that uses deep convolutional neural networks to perform object detections. We can take the output of YOLOv4 feed these object detections into Deep SORT (Simple Online and Realtime Tracking with a Deep Association Metric) in order to create a highly accurate object tracker.
+
+<br/>
+
+<p align="center">
+<img alt="python-v3.7.0" src="https://img.shields.io/badge/python-v3.7.0-3f72af" />
+<img alt="opencv-4.1.1.26" src="https://img.shields.io/badge/opencv-4.1.1.26-green.svg" />
+<img alt="Yolo-v4" src="https://img.shields.io/badge/Yolo-v4-aa96da" />
+
+<br/>
+<a href="https://github.com/theAIGuysCode/yolov4-deepsort">
+<img alt="Origin Repository" src="https://img.shields.io/badge/Origin Repository-grey" />
+</a>
+<img alt="license" src="https://img.shields.io/github/license/mashape/apistatus.svg" />
+</p>
+<br/>
+
+<p align="center">
+<img alt="mockup" width="60%" src="https://user-images.githubusercontent.com/43839834/135746103-41e41f40-0fbf-415e-9a11-2a5c8ea34cab.png" />
+</p>
 
 <br/><br/>
 
