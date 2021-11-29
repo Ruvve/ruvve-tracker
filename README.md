@@ -2,6 +2,9 @@
 
 #### Personal Mobility Navigation - Ruvve
 
+
+<a href="https://ruvve.notion.site/Ruvve-27b333f612814d07aaa2f6e8090c0e90" alt="ruvve-notion"> 🔗 노션 소개 페이지 </a>
+
 <br />
 
 최근 도로나 인도에 **전동 킥보드**가 많이 보이고 있지 않나요? <br/>
